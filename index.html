@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="./styles/style.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="./dist/jquery.slotmachine.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" type="text/css" />
-
+    
+    <script src="dist/money.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -96,21 +97,26 @@ const results = {
   machine2: document.querySelector('#machine2Result'),
   machine3: document.querySelector('#machine3Result')
 };
+var ind = 0;
+const start_money = 1000;
 const el1 = document.querySelector('#machine1');
 const el2 = document.querySelector('#machine2');
 const el3 = document.querySelector('#machine3');
-const machine1 = new SlotMachine(el1, { active: 0 });
-const machine2 = new SlotMachine(el2, { active: 1 });
-const machine3 = new SlotMachine(el3, { active: 2 });
+const machine1 = new SlotMachine(el1, { active: 0 },1, ind);
+const machine2 = new SlotMachine(el2, { active: 1 },2, ind);
+const machine3 = new SlotMachine(el3, { active: 2 },3, ind);
+const result = new Money(start_money)
 
 function onComplete(active){
-  results[this.element.id].innerText = `Index: ${this.active}`;
+  results[this.element.id].innerText = `Index: ${this.active}`;  
 }
 
 btn.addEventListener('click', () => {
+  ind = ind+1;
   machine1.shuffle(5, onComplete);
   setTimeout(() => machine2.shuffle(5, onComplete), 500);
   setTimeout(() => machine3.shuffle(5, onComplete), 1000);
+  result.Win(100, ind);
 });
     </script>
 
@@ -133,6 +139,7 @@ $("#textMachine").slotMachine({
         </script>
       </div>
     </footer>
+
 
   </body>
 </html>

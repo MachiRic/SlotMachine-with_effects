@@ -34,10 +34,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var Timer = require('./timer');
 var raf = require('./raf');
+var one = [0,1,2,3,1];
+var two = [1,2,3,4,1];
+var three = [2,1,3,2,1];
 
 var defaults = {
   active: 0, // Active element [Number]
-  delay: 200, // Animation time [Number]
+  delay: 500, // Animation time [Number]
   auto: false, // Repeat delay [false||Number]
   spins: 5, // Number of spins when auto [Number]
   randomize: null, // Randomize function, must return a number with the selected position
@@ -55,9 +58,11 @@ var FX_GRADIENT = 'slotMachineGradient';
 var FX_STOP = FX_GRADIENT;
 
 var SlotMachine = function () {
-  function SlotMachine(element, options) {
+  function SlotMachine(element, options,machine, ind) {
     _classCallCheck(this, SlotMachine);
 
+    this.ind = ind;
+    this.machine = machine;
     this.element = element;
     // Slot Machine elements
     this.tiles = [].slice.call(this.element.children);
@@ -407,7 +412,16 @@ var SlotMachine = function () {
   }, {
     key: 'random',
     get: function get() {
-      return Math.floor(Math.random() * this.tiles.length);
+      if (this.machine === 1){
+        var i = one[ind];
+      }
+      if (this.machine === 2) {
+        var i = two[ind];
+      }
+      if (this.machine === 3) {
+        var i = three[ind];
+      }
+      return i;
     }
   }, {
     key: 'custom',
