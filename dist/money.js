@@ -1,25 +1,61 @@
 class Money {
     constructor() {
-    
+
     }
 
-    Win(bet, ind) {
+    Win(bet, ind,price_header, price_text) {
+        //Emptying the HTML tags
+        this.Empty(price_header);
+        this.Empty(price_text);
+
+        //Filling the HTML tags with the correct content and 
+        //calculating the price money
         if (ind == 1) {
             let money = bet * 5;
-            return money;
+            this.header = document.createElement('h2')
+            this.header.innerHTML = `MEGA WIN`;
+            this.price = document.createElement('h5');
+            this.price.innerHTML = `You win ${money}`;
+            price_header.appendChild(this.header);
+            price_text.appendChild(this.price);
+            return [money, bet];
         }
         else if (ind == 2) {
             let money = bet * 2;
-            return money;
+            this.header = document.createElement('h2')
+            this.header.innerHTML = 'BIG WIN';
+            this.price = document.createElement('h5');
+            this.price.innerHTML = `You win ${money}`;
+            price_header.appendChild(this.header);
+            price_text.appendChild(this.price);
+            return [money, bet];
         }
         else if (ind == 3) {
             let money = bet * 1.5;
-            return money;
+            this.header = document.createElement('h2')
+            this.header.innerHTML = 'WIN';
+            this.price = document.createElement('h5');
+            this.price.innerHTML = `You win ${money}`;
+            price_header.appendChild(this.header);
+            price_text.appendChild(this.price);
+            return [money, bet];
         }
-        else{
-            return -bet;
+        else {
+            this.header = document.createElement('h2')
+            this.header.innerHTML = 'LOSS';
+            this.price = document.createElement('h5');
+            this.price.innerHTML = `You lost ${-bet}`;
+            price_header.appendChild(this.header);
+            price_text.appendChild(this.price);
+            return [-bet, bet];
         }
 
+    }
+
+    Empty(tag){
+        while (tag.firstChild) {
+            tag.removeChild(tag.firstChild);
+        }
     }
 
 }

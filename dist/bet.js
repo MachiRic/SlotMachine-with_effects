@@ -18,8 +18,6 @@ class Bet {
         if (this.input.value>max_bet){
             this.input.value=max_bet;
         }
-        console.log("max bet: ", max_bet);
-        console.log("bet: ", this.input.value);
         return this.input.value;
 }
 
