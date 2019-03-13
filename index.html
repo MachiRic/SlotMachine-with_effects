@@ -16,6 +16,7 @@
     type="text/css" />
 
   <script src="dist/money.js"></script>
+  <script src="./dist/register.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -133,6 +134,7 @@
     const machine1 = new SlotMachine(el1, { active: 0 }, 1, ind);
     const machine2 = new SlotMachine(el2, { active: 1 }, 2, ind);
     const machine3 = new SlotMachine(el3, { active: 2 }, 3, ind);
+    const register = new Register();
     const result = new Money();
     this.container = document.getElementById("bet");
     this.container_balance = document.getElementById("balance")
@@ -171,7 +173,6 @@
 
     btn.addEventListener('click', () => {
       ind = ind + 1;
-      console.log("TEST ", ind);
       machine1.shuffle(5, onComplete);
       setTimeout(() => machine2.shuffle(5, onComplete), 500);
       setTimeout(() => machine3.shuffle(5, onComplete), 1000);
@@ -179,8 +180,7 @@
       this.result_list = result.Win(bet.bet(this.balance), ind, price_header, price_text);
       this.balance += this.result_list[0];
       this.bal_html.innerText = this.balance;
-      console.log('Bet: ', this.result_list[1], ' Balance: ', this.balance)
-      console.log("");
+      register.StoreData(ind, this.result_list[1], this.balance)
       modal.style.display = "block";
     });
   </script>
