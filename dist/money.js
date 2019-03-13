@@ -10,7 +10,7 @@ class Money {
 
         //Filling the HTML tags with the correct content and 
         //calculating the price money
-        if (ind == 1) {
+        if (ind == 4) {
             let money = bet * 5;
             this.header = document.createElement('h2')
             this.header.innerHTML = `MEGA WIN`;
@@ -20,7 +20,7 @@ class Money {
             price_text.appendChild(this.price);
             return [money, bet];
         }
-        else if (ind == 2) {
+        else if (ind == 3) {
             let money = bet * 2;
             this.header = document.createElement('h2')
             this.header.innerHTML = 'BIG WIN';
@@ -30,7 +30,7 @@ class Money {
             price_text.appendChild(this.price);
             return [money, bet];
         }
-        else if (ind == 3) {
+        else if (ind == 5) {
             let money = bet * 1.5;
             this.header = document.createElement('h2')
             this.header.innerHTML = 'WIN';

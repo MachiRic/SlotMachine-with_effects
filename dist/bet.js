@@ -15,8 +15,13 @@ class Bet {
     }
 
     bet(max_bet){
+        //If statement so that you can't bet money than you have in the bank
         if (this.input.value>max_bet){
             this.input.value=max_bet;
+        }
+        //Max bet for any round
+        else if(this.input.value >200){
+            this.input.value=200;
         }
         return this.input.value;
 }
