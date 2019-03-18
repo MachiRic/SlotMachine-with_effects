@@ -49,7 +49,7 @@
 
   <div id="randomize">
     <div class="container machines">
-      <div class="row machines" >
+      <div class="row machines" style="margin-top: 50px;">
         <div class="col-sm-4 machines">
           <div class="machines">
             <div id="machine1" class="randomizeMachine machines">
@@ -61,7 +61,6 @@
               <div><img src="img/slot6.png" /></div>
             </div>
           </div>
-          <div id="machine1Result" class="col-xs-4 machineResult machines">Index: 0</div>
         </div>
 
         <div class="col-sm-4 machines">
@@ -75,7 +74,6 @@
               <div><img src="img/slot6.png" /></div>
             </div>
           </div>
-          <div id="machine2Result" class="col-xs-4 machineResult machines">Index: 1</div>
         </div>
 
         <div class="col-sm-4 machines machines">
@@ -89,10 +87,9 @@
               <div class="machines"><img src="img/slot6.png" /></div>
             </div>
           </div>
-          <div id="machine3Result" class="col-xs-4 machineResult machines">Index: 2</div>
         </div>
 
-        <div class="btn-group btn-group-justified machines" role="group">
+        <div class="btn-group btn-group-justified machines" role="group" style="margin-top: 80px;">
           <h5>Current balance: </h5>
           <div id="balance" class="machines" style="margin-right: 100px"></div>
           <h5 style="margin-right: 10px">Place your bet!</h5>
@@ -110,11 +107,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row machines">
-        <div class="col-sm-10 offset-sm-1 machines">
-          <pre><code id="codeBlock2"></code></pre>
         </div>
       </div>
     </div>
@@ -145,7 +137,6 @@
     const bet = new Bet(this.container);
 
     function onComplete(active) {
-      results[this.element.id].innerText = `Index: ${this.active}`;
     }
 
     // Get the modal
@@ -176,7 +167,6 @@
       }
     }
     function openModal(){
-      modal.style.display = "block";
       this.result_list = result.Win(bet.bet(this.balance), ind, price_header, price_text);
       this.balance += this.result_list[0];
       this.bal_html.innerText = this.balance;
