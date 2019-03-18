@@ -17,6 +17,7 @@
 
   <script src="dist/money.js"></script>
   <script src="./dist/register.js"></script>
+  <script src="dist/confetti.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -37,7 +38,7 @@
 </head>
 
 <body>
-  <div class="header-line"></div>
+  <div class="header-line" id="cont"></div>
 
 
 
@@ -47,11 +48,11 @@
   </header>
 
   <div id="randomize">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <div>
-            <div id="machine1" class="randomizeMachine">
+    <div class="container machines">
+      <div class="row machines" >
+        <div class="col-sm-4 machines">
+          <div class="machines">
+            <div id="machine1" class="randomizeMachine machines">
               <div><img src="img/slot1.png" /></div>
               <div><img src="img/slot2.png" /></div>
               <div><img src="img/slot3.png" /></div>
@@ -60,12 +61,12 @@
               <div><img src="img/slot6.png" /></div>
             </div>
           </div>
-          <div id="machine1Result" class="col-xs-4 machineResult">Index: 0</div>
+          <div id="machine1Result" class="col-xs-4 machineResult machines">Index: 0</div>
         </div>
 
-        <div class="col-sm-4">
-          <div>
-            <div id="machine2" class="randomizeMachine">
+        <div class="col-sm-4 machines">
+          <div class="machines">
+            <div id="machine2" class="randomizeMachine machines">
               <div><img src="img/slot1.png" /></div>
               <div><img src="img/slot2.png" /></div>
               <div><img src="img/slot3.png" /></div>
@@ -74,45 +75,45 @@
               <div><img src="img/slot6.png" /></div>
             </div>
           </div>
-          <div id="machine2Result" class="col-xs-4 machineResult">Index: 1</div>
+          <div id="machine2Result" class="col-xs-4 machineResult machines">Index: 1</div>
         </div>
 
-        <div class="col-sm-4">
-          <div>
-            <div id="machine3" class="randomizeMachine">
-              <div><img src="img/slot1.png" /></div>
-              <div><img src="img/slot2.png" /></div>
-              <div><img src="img/slot3.png" /></div>
-              <div><img src="img/slot4.png" /></div>
-              <div><img src="img/slot5.png" /></div>
-              <div><img src="img/slot6.png" /></div>
+        <div class="col-sm-4 machines machines">
+          <div class="machines">
+            <div id="machine3" class="randomizeMachine machines">
+              <div class="machines"><img src="img/slot1.png" /></div>
+              <div class="machines"><img src="img/slot2.png" /></div>
+              <div class="machines"><img src="img/slot3.png" /></div>
+              <div class="machines"><img src="img/slot4.png" /></div>
+              <div class="machines"><img src="img/slot5.png" /></div>
+              <div class="machines"><img src="img/slot6.png" /></div>
             </div>
           </div>
-          <div id="machine3Result" class="col-xs-4 machineResult">Index: 2</div>
+          <div id="machine3Result" class="col-xs-4 machineResult machines">Index: 2</div>
         </div>
 
-        <div class="btn-group btn-group-justified" role="group">
+        <div class="btn-group btn-group-justified machines" role="group">
           <h5>Current balance: </h5>
-          <div id="balance"></div>
-          <h5>Place your bet!</h5>
-          <div id="bet"></div>
-          <button id="randomizeButton" type="button" class="btn btn-danger btn-lg">Shuffle</button>
+          <div id="balance" class="machines" style="margin-right: 100px"></div>
+          <h5 style="margin-right: 10px">Place your bet!</h5>
+          <div id="bet" class="machines" style="margin-right: 100px"></div>
+          <button id="randomizeButton" type="button" class="btn btn-danger btn-lg machines" >Shuffle</button>
           <!--Modal-->
-          <div id="myModal" class="modal col-sm-4" style="margin-top: 15%; margin-left:33.5%;">
-              <div class="modal-content" style="text-align: center;" >
-                  <div class="modal-header"style="background-color: gold; text-align: center; display: block;">
-                      <span class="close">&times;</span>
-                      <div id="win_text"></div>
-                  </div>
-                  <div class="modal-body">
-                      <div id="Price_money"></div>
-                  </div>
+          <div id="myModal" class="modal col-sm-4 machines" style="margin-top: 15%; margin-left:33.5%;">
+            <div class="modal-content machines" style="text-align: center;">
+              <div class="modal-header machines" style="background-color: gold; text-align: center; display: block;">
+                <span class="close machines">&times;</span>
+                <div id="win_text" class="machines"></div>
               </div>
+              <div class="modal-body machines">
+                <div id="Price_money" class="machines"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-10 offset-sm-1">
+      <div class="row machines">
+        <div class="col-sm-10 offset-sm-1 machines">
           <pre><code id="codeBlock2"></code></pre>
         </div>
       </div>
@@ -161,27 +162,34 @@
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
+      btn.disabled = false;
       modal.style.display = "none";
+      stopConfetti();
     }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
       if (event.target == modal) {
+        btn.disabled = false;
         modal.style.display = "none";
+        stopConfetti();
       }
     }
-
-    btn.addEventListener('click', () => {
-      ind = ind + 1;
-      machine1.shuffle(5, onComplete);
-      setTimeout(() => machine2.shuffle(5, onComplete), 500);
-      setTimeout(() => machine3.shuffle(5, onComplete), 1000);
-      //setTimeout(myfonction, 5000); 
+    function openModal(){
+      modal.style.display = "block";
       this.result_list = result.Win(bet.bet(this.balance), ind, price_header, price_text);
       this.balance += this.result_list[0];
       this.bal_html.innerText = this.balance;
       register.StoreData(ind, this.result_list[1], this.balance)
-      modal.style.display = "block";
+    }
+
+    btn.addEventListener('click', () => {
+      btn.disabled = true;
+      ind = ind + 1;
+      machine1.shuffle(5, onComplete);
+      setTimeout(() => machine2.shuffle(5, onComplete), 500);
+      setTimeout(() => machine3.shuffle(5, onComplete), 1000);
+      setTimeout(() => openModal(5, onComplete), 4000);
     });
   </script>
 

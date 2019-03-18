@@ -64,4 +64,57 @@
   .modal-body {padding: 2px 16px !important;}
 
 
-  
+  @import 'https://cdn.rawgit.com/yeun/open-color/master/open-color.css';
+@import url('https://rsms.me/inter/inter-ui.css');
+:root{
+  --easing: cubic-bezier(.5,0,.5,1);
+}
+*{ box-sizing: border-box; }
+html{ font-size: 62.5%; }
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Inter UI', sans-serif;
+  font-size: 1.6rem;
+}
+
+h1{
+  color: var(--oc-red-5);
+  text-transform: uppercase;
+  font-size: 2vw;
+  font-weight: 300;
+  margin-bottom: 8rem;
+}
+
+div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conf_btn{
+  margin: 0 2rem;
+  padding: 2rem 1.5rem;
+  border-radius: 4px;
+  font-size: 4rem;
+  line-height: 2rem;
+  background: var(--oc-gray-2);
+  border: 2px solid var(--oc-gray-2);
+  transition: all 250ms var(--easing);
+  cursor: pointer;
+}
+#cont{
+    width: 100%;
+    height: 100%;
+    margin-top: -1000px;
+    margin-left: -1000px;
+    z-index:999999;
+}
+
+.machines{
+    z-index:1;
+    position: relative;
+}

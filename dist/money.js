@@ -18,6 +18,8 @@ class Money {
             this.price.innerHTML = `You win ${money}`;
             price_header.appendChild(this.header);
             price_text.appendChild(this.price);
+            maxParticleCount = 1500;
+            startConfetti();
             return [money, bet];
         }
         else if (ind == 3) {
@@ -28,6 +30,8 @@ class Money {
             this.price.innerHTML = `You win ${money}`;
             price_header.appendChild(this.header);
             price_text.appendChild(this.price);
+            maxParticleCount = 700;
+            startConfetti();
             return [money, bet];
         }
         else if (ind == 5) {
@@ -38,6 +42,8 @@ class Money {
             this.price.innerHTML = `You win ${money}`;
             price_header.appendChild(this.header);
             price_text.appendChild(this.price);
+            maxParticleCount = 100;
+            startConfetti();
             return [money, bet];
         }
         else {
