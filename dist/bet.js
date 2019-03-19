@@ -2,28 +2,74 @@ class Bet {
     constructor(container) {
         this.container = container;
         this.div = document.createElement("div");
-        this.confirm_btn = document.createElement("button");
-        this.confirm_btn.className = "btn btn-danger btn-lg";
-        this.confirm_btn.innerHTML = "confirm bet";
-        this.input = document.createElement("input");
-        this.input.type = "number";
-        this.input.min = "1";
-        this.input.id = "input_bet";
-        this.input.defaultValue = 100;
-        this.div.appendChild(this.input);
+        this.lowest = document.createElement("button");
+        this.lowest.className = "btn btn-danger btn-lg";
+        this.lowest.style="margin-right:10px;";
+        this.lowest.innerHTML = "10kr";
+        this.lowest.value = "10";
+        this.lowest.disabled =false;
+
+        this.medium = document.createElement("button");
+        this.medium.className = "btn btn-danger btn-lg";
+        this.medium.innerHTML = '25kr';
+        this.medium.value = '25';
+        this.medium.style="margin-right:10px";
+        this.medium.disabled =false;
+
+        this.highest = document.createElement("button");
+        this.highest.className = "btn btn-danger btn-lg";
+        this.highest.innerHTML = '50kr';
+        this.highest.value = '50';
+        this.highest.style="margin-right:10px;";
+        this.highest.disabled =false;
+
+        this.div.appendChild(this.lowest);
+        this.div.appendChild(this.medium);
+        this.div.appendChild(this.highest);
         this.container.appendChild(this.div);
+
+        this.lowest.addEventListener('click', () => {
+            console.log(this.lowest.value)
+            document.getElementById("randomizeButton").disabled = false;
+            this.medium.disabled =false;
+            this.highest.disabled =false;
+            this.lowest.disabled =true;
+            this.bet_money=this.lowest.value
+
+        });
+
+        this.medium.addEventListener('click', () => {
+            console.log(this.medium.value)
+            document.getElementById("randomizeButton").disabled = false;
+            this.lowest.disabled =false;
+            this.highest.disabled =false;
+            this.medium.disabled =true;
+            this.bet_money=this.medium.value
+                });
+
+        this.highest.addEventListener('click', () => {
+            console.log(this.highest.value)
+            document.getElementById("randomizeButton").disabled = false;
+            this.lowest.disabled =false;
+            this.medium.disabled =false;
+            this.highest.disabled =true;
+            this.bet_money=this.highest.value
+                });
     }
 
-    bet(max_bet){
+    bet() {
         //If statement so that you can't bet money than you have in the bank
-        if (this.input.value>max_bet){
-            this.input.value=max_bet;
+        /*if (this.input.value > max_bet) {
+            this.input.value = max_bet;
         }
         //Max bet for any round
-        else if(this.input.value >200){
-            this.input.value=200;
-        }
-        return this.input.value;
-}
+        else if (this.input.value > 200) {
+            this.input.value = 200;
+        }*/
+        this.lowest.disabled =false;
+        this.medium.disabled =false;
+        this.highest.disabled =false;
+        return this.bet_money;
+    }
 
 }

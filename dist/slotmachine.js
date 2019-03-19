@@ -34,9 +34,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var Timer = require('./timer');
 var raf = require('./raf');
-var one = [0,1,2,3,1];
-var two = [1,2,3,4,1];
-var three = [2,1,3,2,1];
+var one = [0,2,3,2,2,3,6,4,5,4,3,6,4,1,6,6,2,3,4,2,4];
+var two = [1,3,4,2,6,3,2,4,5,6,4,6,5,1,4,6,3,6,6,5,4];
+var three = [2,4,6,2,4,2,4,3,5,3,2,3,4,5,2,6,2,4,2,2,4];
 
 var defaults = {
   active: 0, // Active element [Number]

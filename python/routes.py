@@ -30,7 +30,7 @@ def save_data():
     return save_to_file(request.get_json()), 200
 
 def save_to_file(json_data):
-    data = "Bet: " + json_data["Bet"] + " Balance: " + json_data["Balance"] + " Number: " + json_data["Number"]
+    data = "Bet: " + json_data["Bet"] + " Balance: " + json_data["Balance"] + " Number: " + json_data["Number"] + " ID: " + json_data["ID"]
     txt = open("results.txt", "a")
     txt.write(data + "\n")
     return "success!"

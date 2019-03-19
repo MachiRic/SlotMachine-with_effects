@@ -94,12 +94,13 @@
           <div id="balance" class="machines" style="margin-right: 100px"></div>
           <h5 style="margin-right: 10px">Place your bet!</h5>
           <div id="bet" class="machines" style="margin-right: 100px"></div>
-          <button id="randomizeButton" type="button" class="btn btn-danger btn-lg machines" >Shuffle</button>
+          <button id="randomizeButton" type="button" class="btn btn-danger btn-lg machines"
+            disabled="true">Shuffle</button>
           <!--Modal-->
           <div id="myModal" class="modal col-sm-4 machines" style="margin-top: 15%; margin-left:33.5%;">
             <div class="modal-content machines" style="text-align: center;">
               <div class="modal-header machines" style="background-color: gold; text-align: center; display: block;">
-                <span class="close machines">&times;</span>
+                <span class="close machines" id="close_btn">&times;</span>
                 <div id="win_text" class="machines"></div>
               </div>
               <div class="modal-body machines">
@@ -109,8 +110,8 @@
           </div>
         </div>
       </div>
-      </div>
     </div>
+  </div>
   </div>
   <script id="codeScript2">
     const btn = document.querySelector('#randomizeButton');
@@ -119,8 +120,9 @@
       machine2: document.querySelector('#machine2Result'),
       machine3: document.querySelector('#machine3Result')
     };
+    
     var ind = 0;
-    const start_money = 1000;
+    const start_money = 100;
     this.balance = start_money;
     const el1 = document.querySelector('#machine1');
     const el2 = document.querySelector('#machine2');
@@ -133,9 +135,11 @@
     this.container = document.getElementById("bet");
     this.container_balance = document.getElementById("balance")
     this.bal_html = document.createElement("h5")
-    this.bal_html.innerText = this.balance;
+    this.bal_html.innerText = `${this.balance}kr`;
     this.container_balance.appendChild(this.bal_html);
     const bet = new Bet(this.container);
+
+    this.user_id = prompt("Please enter your id:");
 
     function onComplete(active) {
     }
@@ -154,28 +158,37 @@
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
-      btn.disabled = false;
       modal.style.display = "none";
       stopConfetti();
+      if (ind == 20) {
+        result.Win(this.balance, 21, price_header, price_text, this.user_id);
+        modal.style.display = "block";
+      }
     }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
       if (event.target == modal) {
-        btn.disabled = false;
         modal.style.display = "none";
         stopConfetti();
+
+        if (ind == 20) {
+          result.Win(this.balance, 21, price_header, price_text, this.user_id);
+          modal.style.display = "block";
+        }
       }
     }
-    function openModal(){
+    function openModal() {
       modal.style.display = "block";
-      this.result_list = result.Win(bet.bet(this.balance), ind, price_header, price_text);
+      this.result_list = result.Win(bet.bet(), ind, price_header, price_text, this.user_id);
       this.balance += this.result_list[0];
-      this.bal_html.innerText = this.balance;
-      register.StoreData(ind, this.result_list[1], this.balance)
+      this.bal_html.innerText = `${this.balance}kr`;
+      register.StoreData(ind, this.result_list[1], this.balance, this.user_id);
     }
 
     btn.addEventListener('click', () => {
+      this.balance = this.balance - bet.bet();
+      this.bal_html.innerText = `${this.balance}kr`;
       btn.disabled = true;
       ind = ind + 1;
       machine1.shuffle(5, onComplete);
