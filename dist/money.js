@@ -15,7 +15,7 @@ class Money {
             this.header = document.createElement('h2')
             this.header.innerHTML = `MEGA WIN`;
             this.price = document.createElement('h5');
-            this.price.innerHTML = `You win ${money}kr`;
+            this.price.innerHTML = `You won 10x${bet} = ${money}kr!`;
             price_header.appendChild(this.header);
             price_text.appendChild(this.price);
             maxParticleCount = 1500;
@@ -27,7 +27,7 @@ class Money {
             this.header = document.createElement('h2')
             this.header.innerHTML = 'BIG WIN';
             this.price = document.createElement('h5');
-            this.price.innerHTML = `You win ${money}kr`;
+            this.price.innerHTML = `You won 5x${bet} = ${money}kr!`;
             price_header.appendChild(this.header);
             price_text.appendChild(this.price);
             maxParticleCount = 700;
@@ -39,7 +39,7 @@ class Money {
             this.header = document.createElement('h2')
             this.header.innerHTML = 'WIN';
             this.price = document.createElement('h5');
-            this.price.innerHTML = `You win ${money}kr`;
+            this.price.innerHTML = `You won 3x${bet} = ${money}kr!`;
             price_header.appendChild(this.header);
             price_text.appendChild(this.price);
             maxParticleCount = 300;
@@ -51,7 +51,7 @@ class Money {
             this.header = document.createElement('h2')
             this.header.innerHTML = 'SMALL WIN';
             this.price = document.createElement('h5');
-            this.price.innerHTML = `You win ${money}kr`;
+            this.price.innerHTML = `You won 2x${bet} = ${money}kr!`;
             price_header.appendChild(this.header);
             price_text.appendChild(this.price);
             maxParticleCount = 100;
