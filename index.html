@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>jQuery Slot Machine</title>
+  <title>Slot Machine</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
 
@@ -35,6 +35,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
     integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
     crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -120,7 +121,6 @@
       machine2: document.querySelector('#machine2Result'),
       machine3: document.querySelector('#machine3Result')
     };
-    
     var ind = 0;
     const start_money = 100;
     this.balance = start_money;
@@ -140,9 +140,18 @@
     const bet = new Bet(this.container);
 
     this.user_id = prompt("Please enter your id:");
+    //start the timer
+    startTimer()
 
     function onComplete(active) {
     }
+    
+    function startTimer() {
+      this.seconds = 0;
+      //Start the timer
+      this.timer = setInterval(function () { this.seconds += 0.1; }, 100);
+    }
+
 
     // Get the modal
     var modal = document.getElementById('myModal');
@@ -160,8 +169,17 @@
     span.onclick = function () {
       modal.style.display = "none";
       stopConfetti();
+      bet.able();
+      //start the timer
+      startTimer()
       if (ind == 20) {
+        //Shows a different modal when the user is at the last round
+        ind += 1;
         result.Win(this.balance, 21, price_header, price_text, this.user_id);
+        modal.style.display = "block";
+      }
+      else if (ind == 21) {
+        //makes it impossible for the user to close the last modal
         modal.style.display = "block";
       }
     }
@@ -171,29 +189,53 @@
       if (event.target == modal) {
         modal.style.display = "none";
         stopConfetti();
-
+        bet.able();
+        //start the timer
+        startTimer()
         if (ind == 20) {
+          //Shows a different modal when the user is at the last round
+          ind += 1;
           result.Win(this.balance, 21, price_header, price_text, this.user_id);
+          modal.style.display = "block";
+        }
+        else if (ind == 21) {
+          //makes it impossible for the user to close the last modal
           modal.style.display = "block";
         }
       }
     }
     function openModal() {
+      //Show the modal window
       modal.style.display = "block";
-      this.result_list = result.Win(bet.bet(), ind, price_header, price_text, this.user_id);
+      //Here we get the result from the shuffle
+      this.result_list = result.Win(bet.bet()[0], ind, price_header, price_text, this.user_id);
+      //Adds the results of the shuffle to the balance
       this.balance += this.result_list[0];
+      //Updates the html that shows the balance
       this.bal_html.innerText = `${this.balance}kr`;
-      register.StoreData(ind, this.result_list[1], this.balance, this.user_id);
+      //Register the data from the user to our results.txt file
+      register.StoreData(ind, this.result_list[1], this.balance, this.user_id, bet.bet()[1], this.exact_time);
+      //Sets the amount of clicks to zero
+      bet.setClickstoZero();
     }
 
     btn.addEventListener('click', () => {
-      this.balance = this.balance - bet.bet();
-      this.bal_html.innerText = `${this.balance}kr`;
+      this.exact_time = this.seconds;
+      clearInterval(this.timer);
+      //Unables the shoose bet buttons and the shuffle button
+      bet.unable()
       btn.disabled = true;
+      //Subtracts the bet from the balance
+      this.balance = this.balance - bet.bet()[0];
+      //Updates the html with the balance
+      this.bal_html.innerText = `${this.balance}kr`;
+      //Add 1 to the index so that we know which round we're at
       ind = ind + 1;
+      //Starts the machines
       machine1.shuffle(5, onComplete);
       setTimeout(() => machine2.shuffle(5, onComplete), 500);
       setTimeout(() => machine3.shuffle(5, onComplete), 1000);
+      //Starts the function that shows the modal window and more
       setTimeout(() => openModal(5, onComplete), 4000);
     });
   </script>

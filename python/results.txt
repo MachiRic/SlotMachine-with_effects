@@ -1,40 +1,4 @@
-Bet: 10 Balance: 90 Number: 1 ID: yolo
-Bet: 10 Balance: 80 Number: 2 ID: yolo
-Bet: 50 Balance: 130 Number: 3 ID: yolo
-Bet: 10 Balance: 120 Number: 4 ID: yolo
-Bet: 10 Balance: 110 Number: 5 ID: yolo
-Bet: 10 Balance: 100 Number: 6 ID: yolo
-Bet: 10 Balance: 90 Number: 7 ID: yolo
-Bet: 10 Balance: 130 Number: 8 ID: yolo
-Bet: 10 Balance: 120 Number: 9 ID: yolo
-Bet: 10 Balance: 110 Number: 10 ID: yolo
-Bet: 10 Balance: 100 Number: 11 ID: yolo
-Bet: 10 Balance: 120 Number: 12 ID: yolo
-Bet: 10 Balance: 190 Number: 15 ID: yolo
-Bet: 10 Balance: 180 Number: 16 ID: yolo
-Bet: 10 Balance: 180 Number: 16 ID: yolo
-Bet: 10 Balance: 180 Number: 16 ID: yolo
-Bet: 10 Balance: 170 Number: 17 ID: yolo
-Bet: 10 Balance: 160 Number: 18 ID: yolo
-Bet: 10 Balance: 170 Number: 19 ID: yolo
-Bet: 10 Balance: 190 Number: 20 ID: yolo
-Bet: 10 Balance: 90 Number: 1 ID: wasssuuuup
-Bet: 10 Balance: 80 Number: 2 ID: wasssuuuup
-Bet: 10 Balance: 90 Number: 3 ID: wasssuuuup
-Bet: 10 Balance: 80 Number: 4 ID: wasssuuuup
-Bet: 10 Balance: 70 Number: 5 ID: wasssuuuup
-Bet: 10 Balance: 60 Number: 6 ID: wasssuuuup
-Bet: 10 Balance: 50 Number: 7 ID: wasssuuuup
-Bet: 10 Balance: 90 Number: 8 ID: wasssuuuup
-Bet: 10 Balance: 80 Number: 9 ID: wasssuuuup
-Bet: 10 Balance: 70 Number: 10 ID: wasssuuuup
-Bet: 10 Balance: 60 Number: 11 ID: wasssuuuup
-Bet: 10 Balance: 80 Number: 12 ID: wasssuuuup
-Bet: 10 Balance: 90 Number: 13 ID: wasssuuuup
-Bet: 10 Balance: 80 Number: 14 ID: wasssuuuup
-Bet: 10 Balance: 170 Number: 15 ID: wasssuuuup
-Bet: 10 Balance: 160 Number: 16 ID: wasssuuuup
-Bet: 10 Balance: 150 Number: 17 ID: wasssuuuup
-Bet: 10 Balance: 140 Number: 18 ID: wasssuuuup
-Bet: 10 Balance: 150 Number: 19 ID: wasssuuuup
-Bet: 10 Balance: 170 Number: 20 ID: wasssuuuup
+Bet: 50 Balance: 50 Number: 1 Clicks: 2 Time: 1.9000000000000006 ID: ijerokfle
+Bet: 25 Balance: 25 Number: 2 Clicks: 1 Time: 1.5000000000000002 ID: ijerokfle
+Bet: 10 Balance: 35 Number: 3 Clicks: 2 Time: 6.5999999999999925 ID: ijerokfle
+Bet: 25 Balance: 10 Number: 4 Clicks: 1 Time: 34.200000000000216 ID: ijerokfle

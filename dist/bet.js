@@ -1,9 +1,11 @@
 class Bet {
     constructor(container) {
+        this.clicks = 0;
         this.container = container;
         this.div = document.createElement("div");
         this.lowest = document.createElement("button");
         this.lowest.className = "btn btn-danger btn-lg";
+        this.lowest.id = "lowest";
         this.lowest.style="margin-right:10px;";
         this.lowest.innerHTML = "10kr";
         this.lowest.value = "10";
@@ -11,6 +13,7 @@ class Bet {
 
         this.medium = document.createElement("button");
         this.medium.className = "btn btn-danger btn-lg";
+        this.medium.id = "medium";
         this.medium.innerHTML = '25kr';
         this.medium.value = '25';
         this.medium.style="margin-right:10px";
@@ -18,6 +21,7 @@ class Bet {
 
         this.highest = document.createElement("button");
         this.highest.className = "btn btn-danger btn-lg";
+        this.highest.id = "highest";
         this.highest.innerHTML = '50kr';
         this.highest.value = '50';
         this.highest.style="margin-right:10px;";
@@ -29,7 +33,7 @@ class Bet {
         this.container.appendChild(this.div);
 
         this.lowest.addEventListener('click', () => {
-            console.log(this.lowest.value)
+            this.clicks += 1;
             document.getElementById("randomizeButton").disabled = false;
             this.medium.disabled =false;
             this.highest.disabled =false;
@@ -39,7 +43,7 @@ class Bet {
         });
 
         this.medium.addEventListener('click', () => {
-            console.log(this.medium.value)
+            this.clicks += 1;
             document.getElementById("randomizeButton").disabled = false;
             this.lowest.disabled =false;
             this.highest.disabled =false;
@@ -48,7 +52,7 @@ class Bet {
                 });
 
         this.highest.addEventListener('click', () => {
-            console.log(this.highest.value)
+            this.clicks += 1;
             document.getElementById("randomizeButton").disabled = false;
             this.lowest.disabled =false;
             this.medium.disabled =false;
@@ -66,10 +70,22 @@ class Bet {
         else if (this.input.value > 200) {
             this.input.value = 200;
         }*/
+        return [this.bet_money,this.clicks];
+    }
+
+    unable(){
+        this.lowest.disabled =true;
+        this.medium.disabled =true;
+        this.highest.disabled =true;
+    }
+
+    able(){
         this.lowest.disabled =false;
         this.medium.disabled =false;
         this.highest.disabled =false;
-        return this.bet_money;
     }
 
+    setClickstoZero(){
+        this.clicks = 0;
+    }
 }

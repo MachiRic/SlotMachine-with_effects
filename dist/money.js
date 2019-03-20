@@ -66,10 +66,7 @@ class Money {
             this.header = document.createElement('h2')
             this.header.innerHTML = 'THE GAME HAS ENDED';
             this.price = document.createElement('h5');
-            this.price.innerHTML =
-              `Raise your hand and we'll get to you! 
-            Your results: ${bet}
-            Your id: ${user_id}`;
+            this.price.innerHTML = `Raise your hand and we'll get to you!`;
             price_header.appendChild(this.header);
             price_text.appendChild(this.price);
         }
