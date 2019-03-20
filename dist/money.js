@@ -13,7 +13,7 @@ class Money {
         if (ind == 15) {
             let money = bet * 10;
             this.header= `MEGA WIN! `;
-            this.price  = `You win ${money}kr`;
+            this.price  = `You win 10x${bet} = ${money}kr!`;
             //startConfetti();
             alert(this.header + this.price)
             return [money, bet];
@@ -21,7 +21,7 @@ class Money {
         else if (ind == 8) {
             let money = bet * 5;
             this.header = 'BIG WIN! ';
-            this.price = `You win ${money}kr`;
+            this.price = `You win 5x${bet} = ${money}kr!`;
             //startConfetti();
             alert(this.header + this.price)
             return [money, bet];
@@ -29,7 +29,7 @@ class Money {
         else if (ind == 12 | ind == 20) {
             let money = bet * 3;
             this.header = 'WIN! ';
-            this.price = `You win ${money}kr`;
+            this.price = `You win 3x${bet} = ${money}kr!`;
             //startConfetti();
             alert(this.header + this.price)
             return [money, bet];
@@ -37,7 +37,7 @@ class Money {
         else if (ind == 13 | ind == 19 | ind == 3) {
             let money = bet * 2;
             this.header = 'SMALL WIN! ';
-            this.price = `You win ${money}kr`;
+            this.price = `You win 2x${bet} = ${money}kr!`;
             //startConfetti();
             alert(this.header + this.price)
             return [money, bet];
