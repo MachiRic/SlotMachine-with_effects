@@ -145,7 +145,7 @@
 
     function onComplete(active) {
     }
-    
+
     function startTimer() {
       this.seconds = 0;
       //Start the timer
@@ -167,8 +167,8 @@
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
-      modal.style.display = "none";
-      stopConfetti();
+      /*modal.style.display = "none";
+      stopConfetti();*/
       bet.able();
       //start the timer
       startTimer()
@@ -187,8 +187,8 @@
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
       if (event.target == modal) {
-        modal.style.display = "none";
-        stopConfetti();
+        /*modal.style.display = "none";
+        stopConfetti();*/
         bet.able();
         //start the timer
         startTimer()
@@ -205,8 +205,6 @@
       }
     }
     function openModal() {
-      //Show the modal window
-      modal.style.display = "block";
       //Here we get the result from the shuffle
       this.result_list = result.Win(bet.bet()[0], ind, price_header, price_text, this.user_id);
       //Adds the results of the shuffle to the balance
@@ -217,6 +215,15 @@
       register.StoreData(ind, this.result_list[1], this.balance, this.user_id, bet.bet()[1], this.exact_time);
       //Sets the amount of clicks to zero
       bet.setClickstoZero();
+      //Show the modal window
+      if (ind == 20) {
+        ind += 1;
+        result.Win(this.balance, 21, price_header, price_text, this.user_id);
+        modal.style.display = "block";
+      }
+      bet.able();
+      //start the timer
+      startTimer()
     }
 
     btn.addEventListener('click', () => {

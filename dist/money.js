@@ -12,50 +12,34 @@ class Money {
         //calculating the price money
         if (ind == 15) {
             let money = bet * 10;
-            this.header = document.createElement('h2')
-            this.header.innerHTML = `MEGA WIN`;
-            this.price = document.createElement('h5');
-            this.price.innerHTML = `You win ${money}kr`;
-            price_header.appendChild(this.header);
-            price_text.appendChild(this.price);
-            maxParticleCount = 1500;
-            startConfetti();
+            this.header= `MEGA WIN! `;
+            this.price  = `You win ${money}kr`;
+            //startConfetti();
+            alert(this.header + this.price)
             return [money, bet];
         }
         else if (ind == 8) {
             let money = bet * 5;
-            this.header = document.createElement('h2')
-            this.header.innerHTML = 'BIG WIN';
-            this.price = document.createElement('h5');
-            this.price.innerHTML = `You win ${money}kr`;
-            price_header.appendChild(this.header);
-            price_text.appendChild(this.price);
-            maxParticleCount = 700;
-            startConfetti();
+            this.header = 'BIG WIN! ';
+            this.price = `You win ${money}kr`;
+            //startConfetti();
+            alert(this.header + this.price)
             return [money, bet];
         }
         else if (ind == 12 | ind == 20) {
             let money = bet * 3;
-            this.header = document.createElement('h2')
-            this.header.innerHTML = 'WIN';
-            this.price = document.createElement('h5');
-            this.price.innerHTML = `You win ${money}kr`;
-            price_header.appendChild(this.header);
-            price_text.appendChild(this.price);
-            maxParticleCount = 300;
-            startConfetti();
+            this.header = 'WIN! ';
+            this.price = `You win ${money}kr`;
+            //startConfetti();
+            alert(this.header + this.price)
             return [money, bet];
         }
         else if (ind == 13 | ind == 19 | ind == 3) {
             let money = bet * 2;
-            this.header = document.createElement('h2')
-            this.header.innerHTML = 'SMALL WIN';
-            this.price = document.createElement('h5');
-            this.price.innerHTML = `You win ${money}kr`;
-            price_header.appendChild(this.header);
-            price_text.appendChild(this.price);
-            maxParticleCount = 100;
-            startConfetti();
+            this.header = 'SMALL WIN! ';
+            this.price = `You win ${money}kr`;
+            //startConfetti();
+            alert(this.header + this.price)
             return [money, bet];
         }
 
@@ -72,12 +56,9 @@ class Money {
         }
 
         else {
-            this.header = document.createElement('h2')
-            this.header.innerHTML = 'LOSS';
-            this.price = document.createElement('h5');
-            this.price.innerHTML = `You lost`;
-            price_header.appendChild(this.header);
-            price_text.appendChild(this.price);
+            this.header = 'LOSS';
+            this.price = `You lost`;
+            alert(this.header)
             return [0, bet];
         }
 

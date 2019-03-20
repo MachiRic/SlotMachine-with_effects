@@ -1,4 +1,0 @@
-Bet: 50 Balance: 50 Number: 1 Clicks: 2 Time: 1.9000000000000006 ID: ijerokfle
-Bet: 25 Balance: 25 Number: 2 Clicks: 1 Time: 1.5000000000000002 ID: ijerokfle
-Bet: 10 Balance: 35 Number: 3 Clicks: 2 Time: 6.5999999999999925 ID: ijerokfle
-Bet: 25 Balance: 10 Number: 4 Clicks: 1 Time: 34.200000000000216 ID: ijerokfle
