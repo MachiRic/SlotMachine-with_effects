@@ -34,13 +34,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var Timer = require('./timer');
 var raf = require('./raf');
-var one = [0,2,3,2,2,3,6,4,5,4,3,6,4,1,6,6,2,3,4,2,4];
-var two = [1,3,4,2,6,3,2,4,5,6,4,6,5,1,4,6,3,6,6,5,4];
-var three = [2,4,6,2,4,2,4,3,5,3,2,3,4,5,2,6,2,4,2,2,4];
+var one = [0,2,3,2,2,3,0,4,5,4,3,0,4,1,0,0,2,3,4,2,3];
+var two = [1,3,4,2,0,3,2,4,5,0,4,0,4,1,4,0,3,0,0,2,3];
+var three = [2,4,0,2,4,2,4,3,5,3,2,3,4,1,2,0,2,4,2,2,3];
 
 var defaults = {
   active: 0, // Active element [Number]
-  delay: 500, // Animation time [Number]
+  delay: 300, // Animation time [Number]
   auto: false, // Repeat delay [false||Number]
   spins: 5, // Number of spins when auto [Number]
   randomize: null, // Randomize function, must return a number with the selected position
@@ -75,21 +75,29 @@ var SlotMachine = function () {
     // Wrap elements inside container
     this._wrapTiles();
     // Set min top offset
+    
     this._minTop = -this._fakeFirstTile.offsetHeight;
     // Set max top offset
     this._maxTop = -this.tiles.reduce(function (acc, tile) {
       return acc + tile.offsetHeight;
     }, 0);
+
+    
     // Call setters if neccesary
     this.changeSettings(Object.assign({}, defaults, options));
     // Initialize spin direction [up, down]
     this._setBounds();
+  
     // Show active element
     this._resetPosition();
+    console.log(this.tiles)
     // Start auto animation
     if (this.auto !== false) {
+      console.log("shufflar")
       this.run();
     }
+
+    
   }
 
   _createClass(SlotMachine, [{
@@ -101,6 +109,7 @@ var SlotMachine = function () {
         // Trigger setters
         _this[key] = settings[key];
       });
+    
     }
   }, {
     key: '_wrapTiles',
@@ -303,6 +312,7 @@ var SlotMachine = function () {
       }
 
       // Update last choosen element index
+      console.log("uppdaterar this.active")
       this.active = this.nextActive;
 
       // Perform animation
@@ -412,16 +422,21 @@ var SlotMachine = function () {
   }, {
     key: 'random',
     get: function get() {
+      console.log("anropar this.random")
       if (this.machine === 1){
-        var i = one[ind];
+        var pic_ind = one[ind];
+        console.log("One: ", pic_ind)
       }
       if (this.machine === 2) {
-        var i = two[ind];
+        var pic_ind = two[ind];
+        console.log("Two: ", pic_ind)
       }
       if (this.machine === 3) {
-        var i = three[ind];
+        var pic_ind = three[ind];
+        console.log("Three: ", pic_ind)
       }
-      return i;
+      console.log("i=", pic_ind)
+      return pic_ind;
     }
   }, {
     key: 'custom',
@@ -429,6 +444,8 @@ var SlotMachine = function () {
       var choosen = void 0;
 
       if (this.randomize) {
+        console.log("SKA ANROPA this.randomize()")
+        console.log(this.randomize)
         var index = this.randomize(this.active);
         if (index < 0 || index >= this.tiles.length) {
           index = 0;
@@ -437,7 +454,7 @@ var SlotMachine = function () {
       } else {
         choosen = this.random;
       }
-
+      console.log("choosen: ", choosen)
       return choosen;
     }
   }, {
