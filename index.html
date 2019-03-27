@@ -91,12 +91,12 @@
         </div>
 
         <div class="btn-group btn-group-justified machines" role="group">
-          <h5>Current balance: </h5>
-          <div id="balance" class="machines" style="margin-right: 100px"></div>
-          <h5 style="margin-right: 10px">Place your bet!</h5>
+          <h5 style="margin-top: 10px; font-size: 30px;">Current balance: </h5>
+          <div id="balance" class="machines" style="margin-right: 100px; margin-top: 10px; font-size: 30px;"></div>
+          <h5 style="margin-right: 10px; margin-top: 10px; font-size: 30px;">Place your bet!</h5>
           <div id="bet" class="machines" style="margin-right: 100px"></div>
           <button id="randomizeButton" type="button" class="btn btn-danger btn-lg machines"
-            disabled="true">Shuffle</button>
+            disabled="true">Spin</button>
           <!--Modal-->
           <div id="myModal" class="modal col-sm-4 machines" style="margin-top: 15%; margin-left:33.5%;">
             <div class="modal-content machines" style="text-align: center;">
@@ -135,6 +135,7 @@
     this.container = document.getElementById("bet");
     this.container_balance = document.getElementById("balance")
     this.bal_html = document.createElement("h5")
+    this.bal_html.style="font-size:30px;"
     this.bal_html.innerText = `${this.balance}kr`;
     this.container_balance.appendChild(this.bal_html);
     const bet = new Bet(this.container);
