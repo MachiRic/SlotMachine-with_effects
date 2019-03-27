@@ -13,48 +13,87 @@ class Money {
         if (ind == 15) {
             let money = bet * 10;
             this.header = document.createElement('h2')
-            this.header.innerHTML = `MEGA WIN`;
+            this.header.innerHTML = `YOU WIN!`;
             this.price = document.createElement('h5');
-            this.price.innerHTML = `You won 10x${bet} = ${money}kr!`;
+            if (bet==10){
+                this.price.innerHTML = `MEGA WIN <br/> 10x${bet} = ${money}kr!`;
+                maxParticleCount = 400;//100kr
+            }
+            else if (bet==25){
+                this.price.innerHTML = `MEGA WIN <br/> 10x${bet} = ${money}kr!`;
+                maxParticleCount = 700;//250kr
+            }
+            else if (bet==50){
+                this.price.innerHTML = `SUPER MEGA WIN <br/> 10x${bet} = ${money}kr!`;
+                maxParticleCount = 1400;//500kr
+            }
             price_header.appendChild(this.header);
             price_text.appendChild(this.price);
-            maxParticleCount = money;
             startConfetti();
             return [money, bet];
         }
         else if (ind == 8) {
             let money = bet * 5;
             this.header = document.createElement('h2')
-            this.header.innerHTML = 'BIG WIN';
+            this.header.innerHTML = `YOU WIN!`;
             this.price = document.createElement('h5');
-            this.price.innerHTML = `You won 5x${bet} = ${money}kr!`;
+
+            if (bet==10){
+                this.price.innerHTML = `BIG WIN <br/> 5x${bet} = ${money}kr!`;
+                maxParticleCount = 200;//50kr
+            }
+            else if (bet==25){
+                this.price.innerHTML = `BIG WIN <br/> 5x${bet} = ${money}kr!`;
+                maxParticleCount = 450;//125kr
+            }
+            else if (bet==50){
+                this.price.innerHTML = `SUPER BIG WIN <br/> 5x${bet} = ${money}kr!`;
+                maxParticleCount = 700;//250kr
+            }
             price_header.appendChild(this.header);
             price_text.appendChild(this.price);
-            maxParticleCount = money;
             startConfetti();
             return [money, bet];
         }
         else if (ind == 12 | ind == 20) {
             let money = bet * 3;
             this.header = document.createElement('h2')
-            this.header.innerHTML = 'WIN';
+            this.header.innerHTML = `YOU WIN!`;
             this.price = document.createElement('h5');
-            this.price.innerHTML = `You won 3x${bet} = ${money}kr!`;
+            if (bet==10){
+                this.price.innerHTML = `WIN <br/> 3x${bet} = ${money}kr!`;
+                maxParticleCount = 150;//30kr
+            }
+            else if (bet==25){
+                this.price.innerHTML = `WIN <br/> 3x${bet} = ${money}kr!`;
+                maxParticleCount = 250;//75kr
+            }
+            else if (bet==50){
+                this.price.innerHTML = `SUPER WIN <br/> 3x${bet} = ${money}kr!`;
+                maxParticleCount = 500;//150kr
+            }
             price_header.appendChild(this.header);
             price_text.appendChild(this.price);
-            maxParticleCount = money;
             startConfetti();
             return [money, bet];
         }
         else if (ind == 13 | ind == 19 | ind == 3) {
             let money = bet * 2;
             this.header = document.createElement('h2')
-            this.header.innerHTML = 'SMALL WIN';
+            this.header.innerHTML = `YOU WIN!`;
             this.price = document.createElement('h5');
-            this.price.innerHTML = `You won 2x${bet} = ${money}kr!`;
+            this.price.innerHTML = `SMALL WIN <br/> 2*${bet} = ${money}kr!`;
             price_header.appendChild(this.header);
             price_text.appendChild(this.price);
-            maxParticleCount = money;
+            if (bet==10){
+                maxParticleCount = 100; //20kr
+            }
+            else if (bet==25){
+                maxParticleCount = 200;//50kr
+            }
+            else if (bet==50){
+                maxParticleCount = 400;//100kr
+            }
             startConfetti();
             return [money, bet];
         }
