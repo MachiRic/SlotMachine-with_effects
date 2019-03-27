@@ -40,7 +40,7 @@ var three = [2,4,6,2,4,2,4,3,5,3,2,3,4,5,2,6,2,4,2,2,4];
 
 var defaults = {
   active: 0, // Active element [Number]
-  delay: 500, // Animation time [Number]
+  delay: 300, // Animation time [Number]
   auto: false, // Repeat delay [false||Number]
   spins: 5, // Number of spins when auto [Number]
   randomize: null, // Randomize function, must return a number with the selected position
