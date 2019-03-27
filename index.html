@@ -96,7 +96,7 @@
           <h5 style="margin-right: 10px">Place your bet!</h5>
           <div id="bet" class="machines" style="margin-right: 100px"></div>
           <button id="randomizeButton" type="button" class="btn btn-danger btn-lg machines"
-            disabled="true">Shuffle</button>
+            disabled="true">Spin</button>
           <!--Modal-->
           <div id="myModal" class="modal col-sm-4 machines" style="margin-top: 15%; margin-left:33.5%;">
             <div class="modal-content machines" style="text-align: center;">
@@ -242,21 +242,6 @@
 
   <footer>
     <div class="content">
-      <div id="textMachine" style="text-align: center">
-        <div>BEST CASINO!</div>
-        <div>WIN MILLIONS!</div>
-        <div>NO TAXES!</div>
-      </div>
-      <script>
-        $("#textMachine").slotMachine({
-          active: 1,
-          delay: 450,
-          auto: 1500,
-          randomize() {
-            return this.nextIndex;
-          }
-        });
-      </script>
     </div>
   </footer>
 
