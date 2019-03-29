@@ -15,10 +15,10 @@ class Money {
         if (ind == 15) {
             let money = bet * 10;        
             if (bet == 50){
-                this.price  = `SUPER MEGA WIN <br/> 10x${bet} = ${money}kr!`;
+                this.price  = `SUPER MEGA WIN ${newLine} 10x${bet} = ${money}kr!`;
             }
             else {    
-                this.price  = `MEGA WIN <br/> 10x${bet} = ${money}kr!`;
+                this.price  = `MEGA WIN ${newLine} 10x${bet} = ${money}kr!`;
             }
             //startConfetti();
             alert(this.when_win+newLine+this.price)
