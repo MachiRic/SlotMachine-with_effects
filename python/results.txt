@@ -137,7 +137,8 @@ Bet: 25 Balance: 115 Number: 16 Clicks: 1 Time: 4.000000000000002 ID: 14
 Bet: 10 Balance: 105 Number: 17 Clicks: 1 Time: 1.5000000000000002 ID: 14
 Bet: 10 Balance: 95 Number: 18 Clicks: 1 Time: 1.9000000000000006 ID: 14
 Bet: 10 Balance: 105 Number: 19 Clicks: 1 Time: 1.7000000000000004 ID: 14
-Bet: 25 Balance: 155 Number: 20 Clicks: 1 Time: 1.6000000000000003 ID: 14Bet: 10 Balance: 90 Number: 1 Clicks: 1 Time: 761.9000000001047 ID: 16
+Bet: 25 Balance: 155 Number: 20 Clicks: 1 Time: 1.6000000000000003 ID: 14
+Bet: 10 Balance: 90 Number: 1 Clicks: 1 Time: 761.9000000001047 ID: 16
 Bet: 10 Balance: 80 Number: 2 Clicks: 1 Time: 2.400000000000001 ID: 16
 Bet: 10 Balance: 90 Number: 3 Clicks: 1 Time: 2.3000000000000007 ID: 16
 Bet: 10 Balance: 80 Number: 4 Clicks: 1 Time: 3.800000000000002 ID: 16
