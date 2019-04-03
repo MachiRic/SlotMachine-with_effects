@@ -438,23 +438,4 @@ Bet: 10 Balance: 210 Number: 17 Clicks: 1 Time: 2.700000000000001 ID: 43
 Bet: 25 Balance: 185 Number: 18 Clicks: 1 Time: 2.600000000000001 ID: 43
 Bet: 25 Balance: 210 Number: 19 Clicks: 1 Time: 1.8000000000000005 ID: 43
 Bet: 10 Balance: 230 Number: 20 Clicks: 1 Time: 2.1000000000000005 ID: 43
-Bet: 50 Balance: 50 Number: 1 Clicks: 1 Time: 210.59999999999232 ID: 45
-Bet: 50 Balance: 0 Number: 2 Clicks: 1 Time: 2.500000000000001 ID: 45
-Bet: 50 Balance: 50 Number: 3 Clicks: 1 Time: 2.800000000000001 ID: 45
-Bet: 50 Balance: 0 Number: 4 Clicks: 1 Time: 2.2000000000000006 ID: 45
-Bet: 50 Balance: -50 Number: 5 Clicks: 1 Time: 1.9000000000000006 ID: 45
-Bet: 50 Balance: -100 Number: 6 Clicks: 1 Time: 2.2000000000000006 ID: 45
-Bet: 50 Balance: -150 Number: 7 Clicks: 1 Time: 2.1000000000000005 ID: 45
-Bet: 50 Balance: 50 Number: 8 Clicks: 1 Time: 1.8000000000000005 ID: 45
-Bet: 50 Balance: 0 Number: 9 Clicks: 1 Time: 3.2000000000000015 ID: 45
-Bet: 50 Balance: -50 Number: 10 Clicks: 1 Time: 2.800000000000001 ID: 45
-Bet: 50 Balance: -100 Number: 11 Clicks: 1 Time: 2.1000000000000005 ID: 45
-Bet: 50 Balance: 0 Number: 12 Clicks: 1 Time: 2.500000000000001 ID: 45
-Bet: 50 Balance: 50 Number: 13 Clicks: 1 Time: 2.700000000000001 ID: 45
-Bet: 50 Balance: 0 Number: 14 Clicks: 1 Time: 1.8000000000000005 ID: 45
-Bet: 50 Balance: 450 Number: 15 Clicks: 1 Time: 2.2000000000000006 ID: 45
-Bet: 50 Balance: 400 Number: 16 Clicks: 1 Time: 4.000000000000002 ID: 45
-Bet: 50 Balance: 350 Number: 17 Clicks: 1 Time: 2.0000000000000004 ID: 45
-Bet: 50 Balance: 300 Number: 18 Clicks: 1 Time: 2.3000000000000007 ID: 45
-Bet: 50 Balance: 350 Number: 19 Clicks: 1 Time: 2.1000000000000005 ID: 45
-Bet: 50 Balance: 450 Number: 20 Clicks: 1 Time: 2.600000000000001 ID: 45
+
